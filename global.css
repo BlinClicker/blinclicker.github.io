@@ -1,0 +1,16 @@
+@font-face{
+	font-family: softFont;
+	src: url("font.ttf")
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	font-family: softFont;
+	user-select: none
+}
+
+body{
+	background: #999999
+}

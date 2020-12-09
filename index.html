@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Блинокликер</title>
+		<script>
+			var clicks = 0;
+			
+			function Start(){
+				
+			}
+			
+			function Click(){
+				clicks += 1;
+				if(clicks >= 100){
+					document.getElementById("image").src = "blin_2.png";
+				}
+				document.getElementById("clicks").innerHTML = clicks;
+				document.getElementById("image").style.transform = "scale(0.8)";
+				setTimeout(function(){document.getElementById("image").style.transform = "scale(1)"}, 100);
+				if(clicks >= 200){
+					document.getElementById("image").style.display = "none";
+					document.getElementById("clicks").innerHTML = "Ты выиграл!";
+					Click = null;
+				}
+			}
+		</script>
+		<link rel="stylesheet" href="global.css">
+	</head>
+	<body onload="Start()" align="center">
+		<div style="width: 100vw; height: 100vh" align="center" onclick="Click()">
+			<h1 id="clicks" style="font-size: 50px">0</h1>
+			<img id="image" style="width: 300px; height: 300px" src="blin_1.png">
+		</div>
+	</body>
+</html>
